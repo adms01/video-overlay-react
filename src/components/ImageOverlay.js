@@ -3,6 +3,10 @@ import React, { useState } from "react";
 function ImageOverlay({ startTime, endTime, image, occurance, alt, currentTime, className }) {
   const [count, setCount] = useState(0);
 
+  /**
+   * countHandler runs upon image load,
+   * counter incremented after image duration elapsed
+   */
   const countHandler = () => {
     setTimeout(() => {
       setCount(count + 1);
