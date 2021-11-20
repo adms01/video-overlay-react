@@ -4,7 +4,9 @@ function ImageOverlay({ startTime, endTime, image, occurance, alt, currentTime, 
   const [count, setCount] = useState(0);
 
   const countHandler = () => {
-    setCount(count + 1);
+    setTimeout(() => {
+      setCount(count + 1);
+    }, endTime - startTime);
   };
 
   const showImage = () => {
