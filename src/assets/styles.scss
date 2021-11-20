@@ -4,6 +4,22 @@
   box-sizing: border-box;
 }
 
+// App component
+
+.app-container {
+  height: 100vh;
+  background-color: rgb(243, 230, 214);
+}
+
+.app-container-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+}
+
+//Video component
 .video-player {
   width: 700px;
   border-radius: 20px;
