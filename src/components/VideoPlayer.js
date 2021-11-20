@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import image1 from "../assets/images/image1.png";
 import image2 from "../assets/images/image2.png";
 import image3 from "../assets/images/image3.png";
+import ImageOverlay from "./ImageOverlay";
 
 function VideoPlayer() {
   const videoRef = useRef(null);
@@ -19,10 +20,25 @@ function VideoPlayer() {
   ];
 
   return (
-    <div>
+    <div className="video-container">
       <video className="video-player" ref={videoRef} onTimeUpdate={onTimeUpdateHandler} controls autoPlay>
         <source src="./Big_Buck_Bunny_1080_10s_5MB.mp4" type="video/mp4" /> Sorry, your browser doesn't support embedded videos
       </video>
+
+      <div className="images">
+        {images?.map((x) => (
+          <ImageOverlay
+            key={x.name}
+            name={x.name}
+            className={x.name}
+            startTime={x.startTime}
+            endTime={x.endTime}
+            occurance={x.occurance}
+            image={x.image}
+            currentTime={currentTime}
+          />
+        ))}
+      </div>
     </div>
   );
 }
