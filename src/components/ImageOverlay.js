@@ -5,7 +5,7 @@ function ImageOverlay({ startTime, endTime, image, occurance, alt, currentTime, 
 
   /**
    * countHandler runs upon image load,
-   * counter incremented after image duration elapsed
+   * After duration of the image has elapsed, increase the count
    */
   const countHandler = () => {
     setTimeout(() => {

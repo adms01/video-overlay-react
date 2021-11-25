@@ -5,9 +5,13 @@ import image3 from "../assets/images/image3.png";
 import ImageOverlay from "./ImageOverlay";
 
 function VideoPlayer() {
-  const videoRef = useRef(null);
+  const videoRef = useRef(null); //used to get current timestamp in video
   const [currentTime, setCurrentTime] = useState(0);
 
+  /**
+   * Runs whenever time in video changes
+   * Sets current time in milliseconds
+   */
   const onTimeUpdateHandler = () => {
     const timestamp = videoRef.current.currentTime * 1000;
     setCurrentTime(timestamp);
